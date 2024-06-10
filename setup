@@ -3,6 +3,11 @@
 # Install Command Line tools
 # xcode-select --install
 
+# Script has to be run as root
+if [[ $EUID -ne 0 ]]; then
+  printf "Certain commands will not be run without sudo privileges. To run as root, run the same command prepended with 'sudo'"
+fi
+
 # Install Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
@@ -11,11 +16,31 @@ chsh -s /bin/bash
 /bin/bash
 
 # Add homebrew to PATH
-echo 'eval $(/opt/homebrew/bin/brew shellenv)' >> /Users/$USER/.bashrc
+# echo 'eval $(/opt/homebrew/bin/brew shellenv)' >> /Users/$USER/.bash_profile
 eval $(/opt/homebrew/bin/brew shellenv)
 
 # Install Ansible
 brew install ansible
 
-# Clone current directory
+# Install Stow to handle dot files simlinks
+brew install stow
+
+# Install Neovim
+brew install neovim
+brew install make
+brew install gcc
+brew install ripgrep
+brew install unzip
+
+brew install wezterm
+brew install tmux
+
+# Clone needed repositories for ansible playbook and dotfiles
 git clone https://github.com/bnto/spunto $1
+git clone --recursive https://github.com/bnto/dotfiles $1
+
+# Handle dotfiles
+cd dotfiles
+stow -t ~ -d dotfiles bash nvim tmux wezterm
+
+echo "Setup Finished"
