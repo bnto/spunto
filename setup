@@ -21,27 +21,16 @@ chsh -s /bin/bash
 eval $(/opt/homebrew/bin/brew shellenv)
 
 # Install Ansible
-brew install ansible
+# brew install ansible
 
 # Install Stow to handle dot files simlinks
-brew install stow
-
-# Install Neovim
-brew install neovim
-brew install make
-brew install gcc
-brew install ripgrep
-brew install unzip
-
-brew install wezterm
-brew install tmux
+brew install stow neovim make gcc ripgrep unzip wezterm tmux
 
 # Clone needed repositories for ansible playbook and dotfiles
 git clone https://github.com/bnto/spunto $1
 git clone --recursive https://github.com/bnto/dotfiles $1
 
 # Handle dotfiles
-cd dotfiles
 stow -t ~ -d dotfiles bash nvim tmux wezterm
 
 echo "Setup Finished"
