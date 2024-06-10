@@ -6,6 +6,7 @@
 # Script has to be run as root
 if [[ $EUID -ne 0 ]]; then
   printf "Certain commands will not be run without sudo privileges. To run as root, run the same command prepended with 'sudo'"
+  [ "$UID" -eq 0 ] || exec sudo bash "$0" "$@"
 fi
 
 # Install Homebrew
