@@ -1,13 +1,17 @@
 #!/usr/bin/env bash
 
 # Install Command Line tools
-xcode-select --install
+# xcode-select --install
 
 # Install Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
+# Set bash as default shell
+chsh -s /bin/bash
+/bin/bash
+
 # Add homebrew to PATH
-echo 'eval $(/opt/homebrew/bin/brew shellenv)' >> /Users/$(echo $USER))/.zprofile
+echo 'eval $(/opt/homebrew/bin/brew shellenv)' >> /Users/$USER/.bashrc
 eval $(/opt/homebrew/bin/brew shellenv)
 
 # Install Ansible
