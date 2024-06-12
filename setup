@@ -14,11 +14,15 @@ pip3 install ansible
 git clone https://github.com/bnto/spunto $1
 git clone --recursive https://github.com/bnto/dotfiles $1
 
+# Prepare homebrew
+# /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# eval "$(homebrew/bin/brew shellenv)"
+
 # Set bash as default shell
 # chsh -s /bin/bash
 # /bin/bash
 
 # Start installation
-ansible-playbook spunto/install.yml
+ansible-playbook spunto/install.yml --verbose
 
 echo "Setup Finished"
