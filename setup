@@ -1,36 +1,24 @@
 #!/usr/bin/env bash
 
-# Install Command Line tools
-# xcode-select --install
+# Install Command line tools
+xcode-select --install
 
-# Script has to be run as root
-if [[ $EUID -ne 0 ]]; then
-  printf "Certain commands will not be run without sudo privileges. To run as root, run the same command prepended with 'sudo'"
-  [ "$UID" -eq 0 ] || exec sudo bash "$0" "$@"
-fi
-
-# Install Homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-# Set bash as default shell
-chsh -s /bin/bash
-/bin/bash
-
-# Add homebrew to PATH
-# echo 'eval $(/opt/homebrew/bin/brew shellenv)' >> /Users/$USER/.bash_profile
-eval $(/opt/homebrew/bin/brew shellenv)
+# Prepare python install
+export PATH="$HOME/Library/Python/3.9/bin:/opt/homebrew/bin:$PATH"
+sudo pip3 install --upgrade pip
 
 # Install Ansible
-# brew install ansible
-
-# Install Stow to handle dot files simlinks
-brew install stow neovim make gcc ripgrep unzip wezterm tmux
+pip3 install ansible
 
 # Clone needed repositories for ansible playbook and dotfiles
 git clone https://github.com/bnto/spunto $1
 git clone --recursive https://github.com/bnto/dotfiles $1
 
-# Handle dotfiles
-stow -t ~ -d dotfiles bash nvim tmux wezterm
+# Set bash as default shell
+# chsh -s /bin/bash
+# /bin/bash
+
+# Start installation
+ansible-playbook spunto/install.yml
 
 echo "Setup Finished"
