@@ -17,12 +17,18 @@
       - neovim
       - coreutils
       - mpv
+      - streamlink
       - lazygit
       - nvm
       - make
       - gcc
       - ripgrep
       - unzip
+      - fzf
+      - fd
+      - newsboat
+      - pandoc
+      - glow
     install_homebrew_if_missing: true
     upgrade_homebrew_packages: false
 
