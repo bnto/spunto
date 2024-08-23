@@ -4,11 +4,7 @@
   become: false
   vars:
     brew_cask_packages:
-      - firefox
       - wezterm
-      - maccy
-      - orbstack
-      - tomatobar
     brew_packages:
       - bash-completion
       - stow
@@ -16,19 +12,12 @@
       - tmux
       - neovim
       - coreutils
-      - mpv
-      - streamlink
-      - lazygit
-      - nvm
       - make
       - gcc
       - ripgrep
       - unzip
       - fzf
       - fd
-      - newsboat
-      - pandoc
-      - glow
     install_homebrew_if_missing: true
     upgrade_homebrew_packages: false
 
