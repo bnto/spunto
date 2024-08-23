@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
 
 # Install Command line tools
-# xcode-select --install
+xcode-select --install
+
+# Wait for user confirmation or for xcode-select to finish if it requires input
+echo "Please complete the Xcode Command Line Tools installation and press Enter to continue..."
+read -p ""
 
 # Prepare python install
 export PATH="$HOME/Library/Python/3.9/bin:/opt/homebrew/bin:$PATH"
