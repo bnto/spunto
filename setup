@@ -3,10 +3,6 @@
 # Install Command line tools
 xcode-select --install
 
-# Wait for user confirmation or for xcode-select to finish if it requires input
-echo "Please complete the Xcode Command Line Tools installation and press Enter to continue..."
-read -p ""
-
 # Prepare python install
 export PATH="$HOME/Library/Python/3.9/bin:/opt/homebrew/bin:$PATH"
 sudo pip3 install --upgrade pip
@@ -30,6 +26,7 @@ chsh -s /bin/bash
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Set dotfiles
-stow -t ~ -d dotfiles bash
+folders=$(find dotfiles -maxdepth 1 -type d ! -name '.*' -exec basename {} \; | tr '\n' ' ')
+stow -t ~ -d dotfiles $(echo $folders)
 
 echo "Setup Finished"
