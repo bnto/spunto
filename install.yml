@@ -5,6 +5,12 @@
   vars:
     brew_cask_packages:
       - wezterm
+      # - maccy
+      # - tomatobar
+      # - rectangle
+      # - firefox
+      # - telegram
+      # - orbstack
     brew_packages:
       - bash-completion
       - stow
@@ -18,6 +24,18 @@
       - unzip
       - fzf
       - fd
+      - jq
+      # - mpv
+      # - streamlink
+      # - lazygit
+      # - nvm
+      # - newsboat
+      # - pandoc
+      # - glow
+      # - mailsy
+      # - s-search
+      # - readability-cli https://gitlab.com/gardenappl/readability-cli
+      # - reddio https://gitlab.com/aaronNG/reddio
     install_homebrew_if_missing: true
     upgrade_homebrew_packages: false
 
