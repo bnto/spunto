@@ -1,0 +1,42 @@
+bat: Clone of cat(1) with syntax highlighting and Git integration
+cask: Emacs dependency management
+chafa: Versatile and fast Unicode/ASCII/ANSI graphics renderer
+entr: Run arbitrary commands when files change
+exiftool: Perl lib for reading and writing EXIF metadata
+fd: Simple, fast and user-friendly alternative to find
+flyctl: Command-line tools for fly.io services
+fzf: Command-line fuzzy finder written in Go
+git: Distributed revision control system
+glow: Render markdown on the CLI
+go: Open source programming language to build simple/reliable/efficient software
+guile: GNU Ubiquitous Intelligent Language for Extensions
+html2text: Advanced HTML-to-text converter
+htop: Improved top (interactive process viewer)
+isync: Synchronize a maildir with an IMAP server
+jq: Lightweight and flexible command-line JSON processor
+lazygit: Simple terminal UI for git commands
+libsixel: SIXEL encoder/decoder implementation
+mailsy: Quickly generate a temporary email address
+mas: Mac App Store command-line interface
+mdcat: Show markdown documents on text terminals
+mdless: Provides a formatted and highlighted view of Markdown files in Terminal
+mpv: Media player based on MPlayer and mplayer2
+neofetch: Fast, highly customisable system info script
+neomutt: E-mail reader with support for Notmuch, NNTP and much more
+neovim: Ambitious Vim-fork focused on extensibility and agility
+newsboat: RSS/Atom feed reader for text terminals
+nvm: Manage multiple Node.js versions
+pandoc: Swiss-army knife of markup format conversion
+pyenv: Python version management
+qemu: Generic machine emulator and virtualizer
+ripgrep: Search tool like grep and The Silver Searcher
+s-search: Web search from the terminal
+stow: Organize software neatly under a single directory tree (e.g. /usr/local)
+streamlink: CLI for extracting streams from various websites to a video player
+tldr: Simplified and community-driven man pages
+tmux: Terminal multiplexer
+unar: Command-line unarchiving tools supporting multiple formats
+w3m: Pager/text based browser
+wget: Internet file retriever
+yazi: Blazing fast terminal file manager written in Rust, based on async I/O
+zk: Plain text note-taking assistant
